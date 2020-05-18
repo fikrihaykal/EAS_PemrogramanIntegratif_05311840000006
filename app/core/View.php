@@ -2,7 +2,6 @@
 
     namespace App\Core;
 
-    use App\Core\PopUp;
 
     class View{
         public static function render($template, $args = []){
@@ -13,7 +12,6 @@
                 $twig = new \Twig\Environment($loader);
 
                 $twig->addGlobal('BASE_URL', BASE_URL);
-                $twig->addGlobal('message', new PopUp());
             }
 
             echo $twig->render($template, $args);
